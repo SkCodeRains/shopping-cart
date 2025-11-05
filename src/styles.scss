@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'bootstrap/scss/bootstrap';
+@use "bootstrap-icons/font/bootstrap-icons.css";
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html,
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+}

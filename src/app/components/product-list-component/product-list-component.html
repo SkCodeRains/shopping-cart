@@ -1,0 +1,20 @@
+<section class="product-list center p-4 ">
+
+    <div #scrollContainer class="search-results h-100 products center w-100 overflow-y-auto row-cols-lg-2 flex-wrap"
+        infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"
+        [scrollWindow]="false">
+
+        <div class="mt-4 w-100">
+            <h3>Products Which You Can Like </h3>
+        </div>
+
+        @for (product of data(); track $index) {
+        <app-product style="max-width: 460px;" [product]="product" (openProduct)="openProduct($event)"
+            (addToCart)="addToCart($event)"></app-product>
+
+        }
+
+    </div>
+
+
+</section>

@@ -1,0 +1,81 @@
+<section class="p-lg-5 p-2 w-100 overflow-auto text-black">
+    <div class="cart-container container-fluid p-3 overflow-auto " [class.hover-mode]="isHoverMode()">
+        <!-- Header -->
+        <div class="cart-header d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold mb-0">
+                <i class="bi bi-cart me-2"></i>
+                My Cart
+            </h5>
+            @if (isHoverMode()) {
+            <button class="btn btn-sm btn-outline-secondary" (click)="closeHover(); $event.stopPropagation()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            }
+        </div>
+
+        @if(cart().length === 0){
+
+        <!-- Empty State -->
+        <div class="text-center text-muted py-4">
+            <i class="bi bi-cart-x display-6"></i>
+            <p class="mt-2">Your cart is empty</p>
+        </div>
+        }
+
+        @if (cart().length > 0) {
+
+
+        <!-- Cart Items -->
+        <div class="cart-items overflow-y-auto  ">
+            @for (item of cart(); track item.product.id) {
+            <div class="cart-item d-flex align-items-center mb-3 border-bottom pb-2">
+                <img [src]="item.product.imageUrl" [alt]="item.product.title" class="cart-image me-3" />
+                <div class="flex-grow-1">
+                    <h6 class="mb-1 text-truncate">{{ item.product.title }}</h6>
+                    <p class="small text-muted mb-1">₹{{ item.product.price }}</p>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-secondary"
+                            (click)="updateQuantity(item, item.quantity - 1)" [disabled]="item.quantity <= 1">
+                            <i class="bi bi-dash"></i>
+                        </button>
+                        <span>{{ item.quantity }}</span>
+                        <button class="btn btn-sm btn-outline-secondary"
+                            (click)="updateQuantity(item, item.quantity + 1)"
+                            [disabled]="item.quantity >= item.product.stock">
+                            <i class="bi bi-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn btn-sm text-danger ms-2" (click)="removeFromCart(item.product.id)"
+                    title="Remove item">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+            }
+        </div>
+
+
+        }
+        @if (cart().length > 0) {
+        <!-- Footer / Total -->
+        <div class="cart-footer mt-3 pt-3 border-top">
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Total Items:</strong>
+                <span>{{ totalItems() }}</span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <strong>Total Price:</strong>
+                <span class="text-primary fw-bold">₹{{ totalValue() }}</span>
+            </div>
+
+            <button class="btn btn-primary w-100" [disabled]="cart().length === 0" (click)="checkout()">
+                <i class="bi bi-bag-check me-2"></i>
+                Proceed to Checkout
+            </button>
+        </div>
+        }
+
+
+    </div>
+
+</section>

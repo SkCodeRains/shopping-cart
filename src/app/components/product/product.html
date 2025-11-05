@@ -1,0 +1,59 @@
+<div class="p-2 position-relative overflow-hidden">
+    <div class="card product-card  shadow-sm  overflow-hidden pt-2 btn btn-warning shadow h-100 w-100 ">
+        <div class="w-100 center" (click)="open(product())">
+            <img [src]="product().imageUrl" class="card-img-top" [alt]="product().title" />
+        </div>
+
+        <div class="card-body d-flex flex-column overflow-y-auto position-absolute bottom-0 w-100 start-0">
+            <h5 class="card-title text-truncate" (click)="open(product())">{{ product().title }}</h5>
+            <p class="card-text small text-muted flex-grow-1" (click)="open(product())">
+                {{ product().description }}
+            </p>
+
+            <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h6 class="mb-0 text-primary fw-bold">₹{{ product().price }}</h6>
+                    <span class="badge" [class.bg-success]="product().stock > 5"
+                        [class.bg-warning]="product().stock <= 5 && product().stock > 0"
+                        [class.bg-danger]="product().stock <= 0">
+                        {{
+                        product().stock > 0
+                        ? (product().stock > 5 ? 'In Stock' : 'Low Stock')
+                        : 'Out of Stock'
+                        }}
+                    </span>
+                </div>
+
+                <!-- 🛒 Product Card Button Area -->
+                <div class="mt-2">
+                    @if (!cartService.isInCart(product().id)) {
+                    <button class="btn btn-sm w-100"
+                        [ngClass]="{        'btn-outline-primary': product().stock > 0,        'btn-secondary disabled': product().stock <= 0      }"
+                        (click)="add(product(), $event)"> <i class="bi bi-cart-plus me-1"></i>
+                        Add to Cart
+                    </button>
+                    } @else {
+                    <div class="d-flex justify-content-between align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-secondary flex-grow-1"
+                            (click)="cartService.decreaseQuantity(product().id)"
+                            [disabled]="cartService.getQuantity(product().id) <= 1">
+                            <i class="bi bi-dash"></i>
+                        </button>
+
+                        <span class="fw-semibold">
+                            {{ cartService.getQuantity(product().id) }}
+                        </span>
+
+                        <button class="btn btn-sm btn-outline-primary flex-grow-1"
+                            (click)="cartService.increaseQuantity(product().id)"
+                            [disabled]="cartService.getQuantity(product().id) >= product().stock">
+                            <i class="bi bi-plus"></i>
+                        </button>
+                    </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

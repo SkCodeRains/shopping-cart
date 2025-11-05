@@ -1,0 +1,32 @@
+:host {
+    .navbar {
+        background-color: #0A1230;
+        height: 5rem;
+
+        img {
+            height: 5rem;
+        }
+
+        .cart {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .count {
+                right: -10px !important;
+            }
+
+            &:hover {
+                .cart-container {
+                    display: block !important;
+                }
+            }
+
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+
+
+}

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg p-0 m-0">
+    <div class="container-fluid p-0 m-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class=" " aria-current="page" href="#">
+                        <img class="icon-link " src="https://bluebenz.com/assets/images/logo/header-logo.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="d-flex text-white pe-5 position-relative">
+                <div class="cart bg-white rounded-circle position-relative btn">
+                    <img src="./icons/cart.svg" alt="" (click)="open()">
+                    @if (itemCount() > 0 || true) {
+                    <div class="rounded-circle count w-50 center h-50 bg-danger position-absolute top-0 ">
+                        {{itemCount()}}
+                    </div>
+                    }
+
+                    <div class="d-none cart-container">
+                        <app-cart [isHoverMode]="true"></app-cart>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,29 @@
+:host {
+    .card {
+        width: 450px !important;
+        height: 350px !important;
+
+
+        border-radius: 0.75rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            height: 10rem;
+            width: 70%;
+            align-items: center;
+            object-fit: cover;
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

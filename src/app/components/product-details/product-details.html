@@ -1,0 +1,82 @@
+<section class="overflow-y-auto w-100 p-5">
+
+    <div class="   rounded-4 mb-5 p-3">
+        <div class="row">
+            <!-- Left Column: Product Image -->
+            <div class="col-12 col-md-6">
+                <div class="image-container rounded center">
+                    <img [src]="product().imageUrl" [alt]="product().title" class="img-fluid rounded h-100" />
+                </div>
+            </div>
+
+            <!-- Right Column: Product Info -->
+            <div class="col-12 col-md-6">
+                <h2 class="fw-bold">{{ product().title }}</h2>
+                <p class="text-muted small mb-2">{{ product().brand }} • {{ product().category }}</p>
+                <p class="lead fw-semibold text-primary mb-2">₹{{ product().price }}</p>
+
+                <div class="mb-3">
+                    <span class="badge" [class.bg-success]="product().stock > 5"
+                        [class.bg-warning]="product().stock <= 5 && product().stock > 0"
+                        [class.bg-danger]="product().stock <= 0">
+                        {{
+                        product().stock > 0
+                        ? (product().stock > 5 ? 'In Stock' : 'Low Stock')
+                        : 'Out of Stock'
+                        }}
+                    </span>
+                </div>
+
+                <p class="description">{{ product().description }}</p>
+
+                <div class="d-flex align-items-center gap-2 mt-4">
+                    <div class="">
+                        @if (!cartService.isInCart(product().id)) {
+                        <button class="btn w-100"
+                            [ngClass]="{        'btn-outline-primary': product().stock > 0,        'btn-secondary disabled': product().stock <= 0      }"
+                            (click)="addToCart(product())"> <i class="bi bi-cart-plus me-1"></i>
+                            Add to Cart
+                        </button>
+                        } @else {
+                        <div class="d-flex w-100 justify-content-between align-items-center gap-2">
+                            <button class="btn btn-sm btn-outline-secondary flex-grow-1"
+                                (click)="cartService.decreaseQuantity(product().id)"
+                                [disabled]="cartService.getQuantity(product().id) <= 1">
+                                <i class="bi bi-dash"></i>
+                            </button>
+
+                            <span class="fw-semibold">
+                                {{ cartService.getQuantity(product().id) }}
+                            </span>
+
+                            <button class="btn btn-sm btn-outline-primary flex-grow-1"
+                                (click)="cartService.increaseQuantity(product().id)"
+                                [disabled]="cartService.getQuantity(product().id) >= product().stock">
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </div>
+                        }
+                    </div>
+                    <button class="btn btn-outline-secondary" routerLink="/">← Back to Products</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h3>Related Products you have viewed </h3>
+    </div>
+    <div class="border border-0 border-top border-2 border-dark-subtle   center position-relative px-2 py-4 rounded-4 ">
+        <div class="search-results  products d-flex w-100 overflow-x-auto gap-2 py-4 " infiniteScroll
+            [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [horizontal]="true"
+            [scrollWindow]="false">
+
+            @for (product of data(); track $index) {
+            <app-product [product]="product" (openProduct)="openProduct($event)"
+                (addToCart)="addToCart($event)"></app-product>
+            }
+
+        </div>
+    </div>
+
+</section>
