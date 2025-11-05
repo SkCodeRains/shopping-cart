@@ -3,18 +3,18 @@ import { CartItem, Product } from '../../models/product.model';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  // ✅ Initialize from localStorage
+  //  Initialize from localStorage
   private _cart = signal<CartItem[]>(this.loadFromStorage());
   readonly cart = this._cart;
 
   constructor() {
-    // ✅ Auto-persist to localStorage whenever cart changes
+    //  Auto-persist to localStorage whenever cart changes
     effect(() => {
       localStorage.setItem('cart', JSON.stringify(this._cart()));
     });
   }
 
-  // ✅ Computed totals
+  //  Computed totals
   readonly totalValue = computed(() =>
     this._cart().reduce(
       (sum, item) => sum + item.product.price * item.quantity,
@@ -26,7 +26,7 @@ export class CartService {
     this._cart().reduce((sum, item) => sum + item.quantity, 0)
   );
 
-  // ✅ Add to cart (with stock limit check)
+  //  Add to cart (with stock limit check)
   addToCart(product: Product): void {
     if (product.stock <= 0) {
       console.warn(`Product "${product.title}" is out of stock.`);
@@ -53,12 +53,12 @@ export class CartService {
     });
   }
 
-  // ✅ Remove item entirely from cart
+  //  Remove item entirely from cart
   removeFromCart(productId: number): void {
     this._cart.set(this._cart().filter((i) => i.product.id !== productId));
   }
 
-  // ✅ Adjust quantity (clamped to stock)
+  //  Adjust quantity (clamped to stock)
   updateQuantity(productId: number, quantity: number): void {
     this._cart.update((items) =>
       items.map((i) => {
@@ -71,12 +71,12 @@ export class CartService {
     );
   }
 
-  // ✅ Clear entire cart
+  //  Clear entire cart
   clearCart(): void {
     this._cart.set([]);
   }
 
-  // ✅ Load persisted cart
+  //  Load persisted cart
   private loadFromStorage(): CartItem[] {
     try {
       return JSON.parse(localStorage.getItem('cart') || '[]');

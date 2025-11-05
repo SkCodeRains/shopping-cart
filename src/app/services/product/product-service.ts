@@ -21,27 +21,27 @@ export class ProductService {
   // Trigger to refresh/reload product data
   private reloadTrigger = signal(0);
 
-  // ✅ Load product data from local JSON file in /public/data/products.json
+  //  Load product data from local JSON file in /public/data/products.json
   readonly products = signal<Product[]>([]);
 
-  // ✅ Computed helpers for easier access
+  //  Computed helpers for easier access
   // loading = computed(() => this.products().loading);
   // error = computed(() => this.products().error);
   // data = computed(() => this.products().data);
 
   constructor(private http: HttpClient) { }
 
-  // ✅ Manual reload if needed
+  //  Manual reload if needed
   reload(): void {
     this.reloadTrigger.update((v) => v + 1);
   }
 
-  // ✅ Fetch a single product by ID
+  //  Fetch a single product by ID
   getProductById(id: number): Product | undefined {
     return this.products().find((p: Product) => p.id === id);
   }
 
-  // ✅ Compute related products (same category, brand, or tags)
+  //  Compute related products (same category, brand, or tags)
   getRelatedProducts(current: Product): Product[] {
     return this.products().filter(
       (p: Product) =>
@@ -52,7 +52,7 @@ export class ProductService {
     );
   }
 
-  // ✅ Optional — simulate stock deduction after checkout
+  //  Optional — simulate stock deduction after checkout
   updateStockAfterCheckout(cartItems: { product: Product; quantity: number }[]): void {
     const updated = this.products().map((p: Product) => {
       const item = cartItems.find((ci) => ci.product.id === p.id);
@@ -62,7 +62,7 @@ export class ProductService {
       return p;
     });
 
-    // For demo only — directly updating in-memory state
+    // directly updating in-memory state
     this.products.set(updated);
   }
 }

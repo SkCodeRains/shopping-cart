@@ -18,7 +18,7 @@ export interface Product {
     tags?: string[];           // e.g., ["gaming", "laptop"]
     rating?: number;           // optional, for UI rating stars
     meta?: ProductMeta;        // optional metadata for similarity
-    stock: number; // ✅ Available inventory
+    stock: number; // Available inventory
 }
 
 export interface CartItem {
