@@ -1,0 +1,488 @@
+[
+    {
+        "id": 1,
+        "title": "Apple MacBook Pro 16” (M3 Pro)",
+        "description": "Apple M3 Pro chip · 16 GB RAM · 1 TB SSD · Liquid Retina XDR Display · macOS Sonoma",
+        "price": 2499,
+        "imageUrl": "https://images.pexels.com/photos/18105/pexels-photo.jpg",
+        "category": "Laptops",
+        "brand": "Apple",
+        "tags": [
+            "laptop",
+            "macbook",
+            "apple",
+            "m3"
+        ],
+        "rating": 4.9,
+        "stock": 5
+    },
+    {
+        "id": 2,
+        "title": "HP Omen 16 Gaming Laptop",
+        "description": "AMD Ryzen 7 7840HS · NVIDIA RTX 4060 · 16 GB DDR5 RAM · 1 TB NVMe SSD · 165 Hz QHD Display",
+        "price": 1899,
+        "imageUrl": "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg",
+        "category": "Laptops",
+        "brand": "HP",
+        "tags": [
+            "gaming",
+            "hp",
+            "laptop"
+        ],
+        "rating": 4.7,
+        "stock": 7
+    },
+    {
+        "id": 3,
+        "title": "Dell XPS 13 Plus",
+        "description": "Intel Core Ultra 7 · 32 GB RAM · 1 TB SSD · InfinityEdge Display · Windows 11 Pro",
+        "price": 2199,
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSuYXRElGAVWuGNwF14SiXUlRjOXgn8p8MSteGWT7QfSKeqgjCCjJ1fsKUaRsN2AIFsh6p_0m1Ekgfs9wZcRBdXs3c3ycT_Ju2XoNwmzIlzWXPpDoH76yjf",
+        "category": "Laptops",
+        "brand": "Dell",
+        "tags": [
+            "ultrabook",
+            "dell",
+            "xps"
+        ],
+        "rating": 4.8,
+        "stock": 9
+    },
+    {
+        "id": 4,
+        "title": "Sony WH-1000XM5 Headphones",
+        "description": "Wireless Noise-Cancelling · Bluetooth 5.3 · 30-hour Battery Life · Touch Controls",
+        "price": 399,
+        "imageUrl": "https://images.pexels.com/photos/3394656/pexels-photo-3394656.jpeg",
+        "category": "Headphones",
+        "brand": "Sony",
+        "tags": [
+            "audio",
+            "sony",
+            "wireless",
+            "headphones"
+        ],
+        "rating": 4.9,
+        "stock": 12
+    },
+    {
+        "id": 5,
+        "title": "Bose QuietComfort Ultra Headphones",
+        "description": "Adaptive ANC · Spatial Audio · 24 hr Battery · USB-C Fast Charging",
+        "price": 429,
+        "imageUrl": "https://images.pexels.com/photos/3394662/pexels-photo-3394662.jpeg",
+        "category": "Headphones",
+        "brand": "Bose",
+        "tags": [
+            "audio",
+            "bose",
+            "headphones"
+        ],
+        "rating": 4.7,
+        "stock": 3
+    },
+    {
+        "id": 6,
+        "title": "Samsung Galaxy S24 Ultra",
+        "description": "Snapdragon 8 Gen 3 · 200 MP Camera · 12 GB RAM · 5000 mAh Battery · 120 Hz AMOLED Display",
+        "price": 1299,
+        "imageUrl": "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg",
+        "category": "Mobiles",
+        "brand": "Samsung",
+        "tags": [
+            "mobile",
+            "android",
+            "samsung",
+            "flagship"
+        ],
+        "rating": 4.8,
+        "stock": 10
+    },
+    {
+        "id": 7,
+        "title": "iPhone 15 Pro Max",
+        "description": "A17 Pro chip · 48 MP Camera · Titanium Design · USB-C · iOS 17",
+        "price": 1399,
+        "imageUrl": "https://m.media-amazon.com/images/I/71d7rfSl0wL._SL1500_.jpg",
+        "category": "Mobiles",
+        "brand": "Apple",
+        "tags": [
+            "iphone",
+            "ios",
+            "apple",
+            "mobile"
+        ],
+        "rating": 4.9,
+        "stock": 4
+    },
+    {
+        "id": 8,
+        "title": "Logitech MX Master 3S",
+        "description": "Ergonomic Wireless Mouse · 8000 DPI Sensor · USB-C Fast Charging",
+        "price": 119,
+        "imageUrl": "https://m.media-amazon.com/images/I/61ni3t1ryQL._SL1500_.jpg",
+        "category": "Accessories",
+        "brand": "Logitech",
+        "tags": [
+            "mouse",
+            "logitech",
+            "accessory"
+        ],
+        "rating": 4.7,
+        "stock": 15
+    },
+    {
+        "id": 9,
+        "title": "Apple Magic Keyboard",
+        "description": "Wireless Keyboard with Touch ID · Rechargeable Battery · macOS Compatible",
+        "price": 149,
+        "imageUrl": "https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg",
+        "category": "Accessories",
+        "brand": "Apple",
+        "tags": [
+            "keyboard",
+            "apple",
+            "wireless"
+        ],
+        "rating": 4.6,
+        "stock": 8
+    },
+    {
+        "id": 10,
+        "title": "Sony Bravia 65” 4K Ultra HD TV",
+        "description": "65-inch · 4K UHD · HDR10+ · Google TV · Dolby Vision · Smart Remote",
+        "price": 1099,
+        "imageUrl": "https://m.media-amazon.com/images/I/81F8ezikv-L._SL1500_.jpg",
+        "category": "Television",
+        "brand": "Sony",
+        "tags": [
+            "tv",
+            "sony",
+            "4k",
+            "smart-tv"
+        ],
+        "rating": 4.5,
+        "stock": 6
+    },
+    {
+        "id": 11,
+        "title": "Apple AirPods Pro 2nd Gen",
+        "description": "Active Noise Cancellation · Spatial Audio · MagSafe Case · Up to 24 hr Battery",
+        "price": 249,
+        "imageUrl": "https://images.pexels.com/photos/373945/pexels-photo-373945.jpeg",
+        "category": "Accessories",
+        "brand": "Apple",
+        "tags": [
+            "airpods",
+            "apple",
+            "wireless",
+            "earbuds"
+        ],
+        "rating": 4.8,
+        "stock": 20
+    },
+    {
+        "id": 12,
+        "title": "Kindle Paperwhite (11th Gen)",
+        "description": "6.8″ Display · 300 ppi · Waterproof · Up to 10 weeks Battery",
+        "price": 129,
+        "imageUrl": "https://m.media-amazon.com/images/I/61nmCTbSCoL._SL1001_.jpg",
+        "category": "E-Readers",
+        "brand": "Amazon",
+        "tags": [
+            "kindle",
+            "amazon",
+            "ereader"
+        ],
+        "rating": 4.4,
+        "stock": 12
+    },
+    {
+        "id": 13,
+        "title": "GoPro HERO12 Black",
+        "description": "5.3K60 Video · Hypersmooth 6.0 · Waterproof to 33ft · Built-in Mount",
+        "price": 499,
+        "imageUrl": "https://m.media-amazon.com/images/I/71jufq5+PaL._SL1500_.jpg",
+        "category": "Cameras",
+        "brand": "GoPro",
+        "tags": [
+            "gopro",
+            "camera",
+            "action"
+        ],
+        "rating": 4.6,
+        "stock": 7
+    },
+    {
+        "id": 14,
+        "title": "Samsung Galaxy Tab S9 Ultra",
+        "description": "14.6″ AMOLED · Snapdragon 8 Gen 3 · S-Pen Included · 512 GB Storage",
+        "price": 1199,
+        "imageUrl": "https://images.pexels.com/photos/5082570/pexels-photo-5082570.jpeg",
+        "category": "Tablets",
+        "brand": "Samsung",
+        "tags": [
+            "tablet",
+            "samsung",
+            "android"
+        ],
+        "rating": 4.7,
+        "stock": 5
+    },
+    {
+        "id": 15,
+        "title": "Nintendo Switch OLED Model",
+        "description": "7″ OLED Screen · 64 GB Storage · Improved Audio · Dock Included",
+        "price": 349,
+        "imageUrl": "https://m.media-amazon.com/images/I/71Q54HnKxwS._SL1500_.jpg",
+        "category": "Gaming Consoles",
+        "brand": "Nintendo",
+        "tags": [
+            "nintendo",
+            "switch",
+            "gaming"
+        ],
+        "rating": 4.5,
+        "stock": 11
+    },
+    {
+        "id": 16,
+        "title": "Kindle Paperwhite (11th Gen)",
+        "description": "6.8″ Display · 300 ppi · Waterproof · 10-Week Battery",
+        "price": 129,
+        "imageUrl": "https://m.media-amazon.com/images/I/61nmCTbSCoL._SL1001_.jpg",
+        "category": "E-Readers",
+        "brand": "Amazon",
+        "tags": [
+            "kindle",
+            "ereader",
+            "amazon"
+        ],
+        "rating": 4.4,
+        "stock": 12
+    },
+    {
+        "id": 17,
+        "title": "Google Nest Hub 2nd Gen",
+        "description": "7″ Smart Display · Voice Assistant · Wi-Fi · Bluetooth",
+        "price": 99,
+        "imageUrl": "https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg",
+        "category": "Smart Home",
+        "brand": "Google",
+        "tags": [
+            "smart-home",
+            "google",
+            "display"
+        ],
+        "rating": 4.5,
+        "stock": 18
+    },
+    {
+        "id": 18,
+        "title": "Amazon Echo Dot 5th Gen",
+        "description": "Smart Speaker with Alexa · Compact Design · Improved Bass",
+        "price": 59,
+        "imageUrl": "https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg",
+        "category": "Smart Home",
+        "brand": "Amazon",
+        "tags": [
+            "smart-home",
+            "alexa",
+            "speaker"
+        ],
+        "rating": 4.6,
+        "stock": 25
+    },
+    {
+        "id": 19,
+        "title": "Philips Hue Smart Bulb Starter Kit",
+        "description": "2 Bulbs + Hub · RGB Lighting · Works with Alexa & Google",
+        "price": 119,
+        "imageUrl": "https://images.pexels.com/photos/1433052/pexels-photo-1433052.jpeg",
+        "category": "Smart Home",
+        "brand": "Philips",
+        "tags": [
+            "lighting",
+            "smart-home",
+            "bulb"
+        ],
+        "rating": 4.5,
+        "stock": 15
+    },
+    {
+        "id": 20,
+        "title": "Dyson V15 Detect Vacuum Cleaner",
+        "description": "Laser Slim Fluffy Head · LCD Screen · Up to 60-min Runtime",
+        "price": 699,
+        "imageUrl": "https://images.pexels.com/photos/4107283/pexels-photo-4107283.jpeg",
+        "category": "Home Appliances",
+        "brand": "Dyson",
+        "tags": [
+            "vacuum",
+            "cleaner",
+            "dyson"
+        ],
+        "rating": 4.8,
+        "stock": 6
+    },
+    {
+        "id": 21,
+        "title": "Samsung Galaxy Tab S9 Ultra",
+        "description": "14.6″ AMOLED · Snapdragon 8 Gen 3 · S-Pen Included",
+        "price": 1199,
+        "imageUrl": "https://images.pexels.com/photos/5082570/pexels-photo-5082570.jpeg",
+        "category": "Tablets",
+        "brand": "Samsung",
+        "tags": [
+            "tablet",
+            "android",
+            "samsung"
+        ],
+        "rating": 4.7,
+        "stock": 5
+    },
+    {
+        "id": 22,
+        "title": "Apple iPad Pro M2 12.9”",
+        "description": "M2 Chip · Liquid Retina XDR · Apple Pencil 2 Support",
+        "price": 1299,
+        "imageUrl": "https://images.pexels.com/photos/60626/pexels-photo-60626.jpeg",
+        "category": "Tablets",
+        "brand": "Apple",
+        "tags": [
+            "tablet",
+            "apple",
+            "ipad"
+        ],
+        "rating": 4.8,
+        "stock": 8
+    },
+    {
+        "id": 23,
+        "title": "Samsung Galaxy Watch 6 Classic",
+        "description": "Stainless Steel · Wear OS · ECG Sensor · Bluetooth/Wi-Fi",
+        "price": 399,
+        "imageUrl": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+        "category": "Wearables",
+        "brand": "Samsung",
+        "tags": [
+            "watch",
+            "smartwatch",
+            "samsung"
+        ],
+        "rating": 4.6,
+        "stock": 10
+    },
+    {
+        "id": 24,
+        "title": "Apple Watch Ultra 2",
+        "description": "49 mm Titanium Case · Dual-Frequency GPS · Up to 72 hrs Battery",
+        "price": 799,
+        "imageUrl": "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+        "category": "Wearables",
+        "brand": "Apple",
+        "tags": [
+            "watch",
+            "smartwatch",
+            "apple"
+        ],
+        "rating": 4.8,
+        "stock": 7
+    },
+    {
+        "id": 25,
+        "title": "Samsung QN90C Neo QLED 55” TV",
+        "description": "Quantum HDR · 4K · Smart Hub · Dolby Atmos",
+        "price": 1599,
+        "imageUrl": "https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg",
+        "category": "Television",
+        "brand": "Samsung",
+        "tags": [
+            "tv",
+            "smart-tv",
+            "4k"
+        ],
+        "rating": 4.8,
+        "stock": 8
+    },
+    {
+        "id": 26,
+        "title": "LG C3 OLED 55” Smart TV",
+        "description": "α9 AI Processor 4K Gen6 · Dolby Vision · WebOS 23",
+        "price": 1499,
+        "imageUrl": "https://m.media-amazon.com/images/I/81c6NNTQS1L._SL1500_.jpg",
+        "category": "Television",
+        "brand": "LG",
+        "tags": [
+            "tv",
+            "lg",
+            "oled"
+        ],
+        "rating": 4.7,
+        "stock": 9
+    },
+    {
+        "id": 27,
+        "title": "Asus ROG Zephyrus G14",
+        "description": "AMD Ryzen 9 · RTX 4070 · 165 Hz QHD · 1 TB SSD",
+        "price": 2299,
+        "imageUrl": "https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg",
+        "category": "Laptops",
+        "brand": "Asus",
+        "tags": [
+            "gaming",
+            "laptop",
+            "rog"
+        ],
+        "rating": 4.8,
+        "stock": 6
+    },
+    {
+        "id": 28,
+        "title": "IKEA Markus Office Chair",
+        "description": "Ergonomic Mesh Design · Adjustable Height · Lumbar Support",
+        "price": 199,
+        "imageUrl": "https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg",
+        "category": "Furniture",
+        "brand": "IKEA",
+        "tags": [
+            "chair",
+            "office",
+            "furniture"
+        ],
+        "rating": 4.5,
+        "stock": 15
+    },
+    {
+        "id": 29,
+        "title": "Herman Miller Aeron Chair",
+        "description": "Ergonomic Design · Adjustable Armrests · Breathable Mesh",
+        "price": 1399,
+        "imageUrl": "https://images.pexels.com/photos/3757056/pexels-photo-3757056.jpeg",
+        "category": "Furniture",
+        "brand": "Herman Miller",
+        "tags": [
+            "chair",
+            "ergonomic",
+            "office"
+        ],
+        "rating": 4.9,
+        "stock": 4
+    },
+    {
+        "id": 30,
+        "title": "Samsung JetBot AI+ Robot Vacuum",
+        "description": "AI Object Recognition · LiDAR Navigation · Self-Empty Dock",
+        "price": 999,
+        "imageUrl": "https://images.pexels.com/photos/4107284/pexels-photo-4107284.jpeg",
+        "category": "Home Appliances",
+        "brand": "Samsung",
+        "tags": [
+            "robot",
+            "vacuum",
+            "smart-home"
+        ],
+        "rating": 4.7,
+        "stock": 6
+    }
+]
