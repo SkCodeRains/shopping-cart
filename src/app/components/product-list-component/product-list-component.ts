@@ -7,6 +7,7 @@ import { CartService } from '../../services/cart/cart-service';
 import { Router } from '@angular/router';
 import { Product } from '../../models/product.model';
 import { ProductComponent } from "../product/product";
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-product-list-component',
@@ -22,6 +23,8 @@ export class ProductListComponent implements AfterViewInit {
   protected router = inject(Router);
 
   scrollContainer = viewChild<ElementRef>('scrollContainer');
+
+  PATH = environment.API_PATH;
 
   data = signal<Product[]>([]);
   size = 0;
@@ -52,7 +55,7 @@ export class ProductListComponent implements AfterViewInit {
 
   getProductsData() {
     if (this.productService.products().length == 0) {
-      this.http.get<Product[]>('/data/products.json').subscribe({
+      this.http.get<Product[]>(this.PATH + 'products.json').subscribe({
         next: (data) => {
           this.productService.products.set(data);
           this.onScroll();
