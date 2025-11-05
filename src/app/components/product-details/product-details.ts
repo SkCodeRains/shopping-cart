@@ -62,6 +62,7 @@ export class ProductDetails extends ProductListComponent implements AfterViewIni
   }
 
   override openProduct(product: Product): void {
+    this.router.navigate(['product', product.id], { state: { product } });
     this.product.set(product);
     this.loadRelatedProducts();
   }
