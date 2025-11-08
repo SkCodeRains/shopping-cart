@@ -1,4 +1,4 @@
-import { afterNextRender, AfterViewInit, Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { afterNextRender, AfterViewInit, Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { ProductService } from '../../services/product/product-service';
 import { HttpClient } from '@angular/common/http';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 import { Product } from '../../models/product.model';
 import { ProductComponent } from "../product/product";
 import { environment } from '../../../environments/environment';
+import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-list-component',
-  imports: [InfiniteScrollDirective, CommonModule, ProductComponent],
+  imports: [InfiniteScrollDirective, CommonModule, ProductComponent, NgbPagination],
   templateUrl: './product-list-component.html',
   styleUrl: './product-list-component.scss',
 })
@@ -23,6 +24,8 @@ export class ProductListComponent implements AfterViewInit {
   protected router = inject(Router);
 
   scrollContainer = viewChild<ElementRef>('scrollContainer');
+
+  totalElement = computed(() => this.productService.products().length);
 
   PATH = environment.API_PATH;
 
@@ -57,20 +60,6 @@ export class ProductListComponent implements AfterViewInit {
   }
 
 
-  setDataforPage(page: number) {
-    const all = this.productService.products();
-    const next = all.slice(this.navigationConfig().size * page - 5, (
-      this.navigationConfig().size * page
-    ));
-
-    this.navigationConfig().page = page;
-
-
-    this.data.set(next);
-
-  }
-
-
   isScrollView() {
     return (this.scrollContainer()?.nativeElement.scrollHeight <= this.scrollContainer()?.nativeElement.clientHeight);
   }
@@ -80,7 +69,7 @@ export class ProductListComponent implements AfterViewInit {
       this.http.get<Product[]>(this.PATH + 'products.json').subscribe({
         next: (data) => {
           this.productService.products.set(data);
-          this.setDataforPage(1);
+          this.navigate(1);
         },
         error: (err) => console.error(err)
       });
@@ -96,4 +85,17 @@ export class ProductListComponent implements AfterViewInit {
   openProduct(product: Product) {
     this.router.navigate(['product', product.id], { state: { product } });
   }
+
+  navigate(page: number) {
+    const all = this.productService.products();
+    const next = all.slice(this.navigationConfig().size * page - 5, (
+      this.navigationConfig().size * page
+    ));
+
+    this.navigationConfig().page = page;
+
+
+    this.data.set(next);
+  }
+
 }

@@ -8,3 +8,11 @@
 
     }
 }
+
+:host::ng-deep {
+    ngb-pagination {
+        .pagination {
+            margin: 0;
+        }
+    }
+}

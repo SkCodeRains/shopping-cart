@@ -14,19 +14,18 @@
 
         }
 
-        <div class="w-100 bg-dark-subtle border border-1  border-dark  px-3 py-1">
+        <div class="w-100  p-4 px-3 py-1">
 
-            <div class=" w-100  justify-content-between align-items-center d-flex">
 
-                <button class=" btn btn-secondary" (click)="setDataforPage(navigationConfig().page-1)">Pre</button>
-                <div>
-                    <span class="">Total Items {{productService.products().length}}</span>
-                    <span> Showing item from {{this.navigationConfig().size *
-                        this.navigationConfig().page-5}} to {{this.navigationConfig().size *
-                        this.navigationConfig().page}}</span>
+
+            <div class=" w-100  center">
+
+                <div class="center">
+                    <ngb-pagination class="w-100" (pageChange)="navigate($event)" [collectionSize]="totalElement()"
+                        [pageSize]="navigationConfig().size" [(page)]="navigationConfig().page"
+                        aria-label="Default pagination" />
                 </div>
-                <button class=" btn btn-primary" [disabled]=""
-                    (click)="setDataforPage(navigationConfig().page+1)">Next</button>
+
 
             </div>
         </div>
