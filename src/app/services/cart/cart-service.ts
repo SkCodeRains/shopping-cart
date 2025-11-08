@@ -89,6 +89,9 @@ export class CartService {
     return this.cart().find((i) => i.product.id === productId)?.quantity ?? 0;
   }
 
+
+
+
   increaseQuantity(id: number) {
     const items = this.cart().map((i) =>
       i.product.id === id ? { ...i, quantity: i.quantity + 1 } : i

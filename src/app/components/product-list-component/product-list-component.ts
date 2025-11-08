@@ -29,12 +29,19 @@ export class ProductListComponent implements AfterViewInit {
   data = signal<Product[]>([]);
   size = 0;
 
+  navigationConfig = signal({
+    page: 1,
+    size: 5,
+
+  });
+
   ngAfterViewInit(): void {
     this.getProductsData();
   }
 
 
   onScroll() {
+    return;
     if (this.data().length < this.productService.products().length) {
       const all = this.productService.products();
       const next = all.slice(0, (this.size += 5));
@@ -49,6 +56,21 @@ export class ProductListComponent implements AfterViewInit {
     }
   }
 
+
+  setDataforPage(page: number) {
+    const all = this.productService.products();
+    const next = all.slice(this.navigationConfig().size * page - 5, (
+      this.navigationConfig().size * page
+    ));
+
+    this.navigationConfig().page = page;
+
+
+    this.data.set(next);
+
+  }
+
+
   isScrollView() {
     return (this.scrollContainer()?.nativeElement.scrollHeight <= this.scrollContainer()?.nativeElement.clientHeight);
   }
@@ -58,7 +80,7 @@ export class ProductListComponent implements AfterViewInit {
       this.http.get<Product[]>(this.PATH + 'products.json').subscribe({
         next: (data) => {
           this.productService.products.set(data);
-          this.onScroll();
+          this.setDataforPage(1);
         },
         error: (err) => console.error(err)
       });

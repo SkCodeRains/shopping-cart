@@ -37,8 +37,7 @@ export class ProductDetails extends ProductListComponent implements AfterViewIni
 
   }
   override onScroll(): void {
-    console.log(this.data().length < this.allRelatedProducts().length);
-
+    return;
     if (this.data().length < this.allRelatedProducts().length) {
       const all = this.allRelatedProducts();
       const next = all.slice(0, (this.size += 5));

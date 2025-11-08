@@ -15,9 +15,9 @@
             <div class="d-flex text-white pe-5 position-relative">
                 <div class="cart bg-white rounded-circle position-relative btn">
                     <img src="./icons/cart.svg" alt="" (click)="open()">
-                    @if (itemCount() > 0 || true) {
+                    @if (cartService.totalItems()> 0 || true) {
                     <div class="rounded-circle count w-50 center h-50 bg-danger position-absolute top-0 ">
-                        {{itemCount()}}
+                        {{cartService.totalItems()}}
                     </div>
                     }
 
